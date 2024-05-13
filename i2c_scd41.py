@@ -83,10 +83,12 @@ def main():
     time.sleep(1)  # Delay for 1 second
     start_periodic_measurements()
     print("SCD41: Initialization finished")
-
-    while True:
+    
+    count = 0
+    while count < 15:
         time.sleep(1)  # Poll every second
         poll_sensor()
+        count += 1
 
 if __name__ == "__main__":
     main()
